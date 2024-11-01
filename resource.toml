@@ -1,0 +1,15 @@
+[[stack]]
+name = "grafana_tempo_loki"
+[stack.config]
+repo = "mbecker20/grafana_tempo_loki"
+environment = """
+  # Grafana
+  GRAFANA_VERSION=latest
+  GRAFANA_PORT=3000
+  # Tempo
+  TEMPO_VERSION=latest
+  # Loki
+  LOKI_VERSION=latest
+  # Prometheus
+  PROMETHEUS_VERSION=latest
+"""
