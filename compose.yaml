@@ -60,7 +60,7 @@ services:
       - ./config/tempo.yaml:/etc/tempo.yaml
       - tempo-data:/var/tempo
     depends_on:
-      - init
+      - tempo-init
       - memcached
 
   memcached:

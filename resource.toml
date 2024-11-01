@@ -2,6 +2,7 @@
 name = "grafana_tempo_loki"
 [stack.config]
 repo = "mbecker20/grafana_tempo_loki"
+ignore_services = ["tempo-init"]
 environment = """
   # Grafana
   GRAFANA_VERSION=latest
