@@ -64,7 +64,7 @@ services:
       - memcached
 
   memcached:
-    image: memcached:1.6.29
+    image: memcached:${MEMCACHED_VERSION:-latest}
     networks:
       - default
     ports:
