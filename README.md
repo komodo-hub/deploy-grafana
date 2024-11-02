@@ -17,11 +17,11 @@ name = "grafana"
 repo = "mbecker20/deploy_grafana"
 ignore_services = ["tempo-init"]
 environment = """
-  GRAFANA_TAG=latest
-  GRAFANA_PORT=3000
-  TEMPO_TAG=latest
-  LOKI_TAG=latest
-  PROMETHEUS_TAG=latest
-  MEMCACHED_TAG=latest
+  GRAFANA_TAG = latest
+  GRAFANA_PORT = 3000
+  TEMPO_TAG = latest
+  LOKI_TAG = latest
+  PROMETHEUS_TAG = latest
+  MEMCACHED_TAG = latest
 """
 ```
