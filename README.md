@@ -1,5 +1,7 @@
 # Deploy Grafana
 
+Part of the [Komodo Hub collection.](https://github.com/mbecker20/komodo_hub)
+
 Runs Grafana + Tempo + Loki. Grafana is preloaded with sources for Tempo, Prometheus (scraping Tempo), and Loki, and has auth disabled. All data is stored locally.
 
 Suitable as is for local development. Production usage can fork the repo and customize for their needs, such as enabling auth on Grafana, and switch another data store like AWS S3 for storage.
