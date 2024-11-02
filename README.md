@@ -1,4 +1,4 @@
-# Grafana compose
+# Deploy Grafana
 
 Runs Grafana + Tempo + Loki. Grafana is preloaded with sources for Tempo, Prometheus (scraping Tempo), and Loki, and has auth disabled. All data is stored locally.
 
