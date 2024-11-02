@@ -8,14 +8,20 @@ Suitable as is for local development. Production usage can fork the repo and cus
 
 - Loki: https://grafana.com/docs/loki/latest/setup/install/docker/#install-with-docker-compose
 
-## Environment
+## Komodo Resource TOML
 
-Use this as the starting point for a custom compose `.env`. It's not required, these values will also be defaulted if not provided.
-
-```shell
-GRAFANA_VERSION=latest
-GRAFANA_PORT=3000
-TEMPO_VERSION=latest
-LOKI_VERSION=latest
-PROMETHEUS_VERSION=latest
+```toml
+[[stack]]
+name = "grafana"
+[stack.config]
+repo = "mbecker20/deploy_grafana"
+ignore_services = ["tempo-init"]
+environment = """
+  GRAFANA_TAG=latest
+  GRAFANA_PORT=3000
+  TEMPO_TAG=latest
+  LOKI_TAG=latest
+  PROMETHEUS_TAG=latest
+	MEMCACHED_TAG=latest
+"""
 ```
