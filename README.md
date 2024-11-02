@@ -22,6 +22,6 @@ environment = """
   TEMPO_TAG=latest
   LOKI_TAG=latest
   PROMETHEUS_TAG=latest
-	MEMCACHED_TAG=latest
+  MEMCACHED_TAG=latest
 """
 ```
