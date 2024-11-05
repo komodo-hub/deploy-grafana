@@ -1,6 +1,6 @@
 # Deploy Grafana
 
-Part of the [Komodo Hub collection.](https://github.com/mbecker20/komodo_hub)
+Part of the [Komodo Hub collection.](https://github.com/komodo-hub/komodo-hub)
 
 Runs Grafana + Tempo + Loki. Grafana is preloaded with sources for Tempo, Prometheus (scraping Tempo), and Loki, and has auth disabled. All data is stored locally.
 
@@ -16,11 +16,15 @@ Suitable as is for local development. Production usage can fork the repo and cus
 [[stack]]
 name = "grafana"
 [stack.config]
-repo = "mbecker20/deploy_grafana"
+repo = "komodo-hub/deploy-grafana"
 ignore_services = ["tempo-init"]
 environment = """
-  GRAFANA_TAG = latest
+  # Change the port to access Grafana UI
   GRAFANA_PORT = 3000
+  # https://docs.docker.com/engine/logging/configure
+  LOGGING_DRIVER = local
+  # Custom image versions
+  GRAFANA_TAG = latest
   TEMPO_TAG = latest
   LOKI_TAG = latest
   PROMETHEUS_TAG = latest

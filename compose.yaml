@@ -2,6 +2,8 @@ services:
 
   grafana:
     image: grafana/grafana:${GRAFANA_TAG:-latest}
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
     networks:
       - default
     ports:
@@ -21,6 +23,8 @@ services:
       - --web.enable-remote-write-receiver
       - --enable-feature=exemplar-storage
       - --enable-feature=native-histograms
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
     networks:
       - default
     ports:
@@ -31,6 +35,8 @@ services:
   loki:
     image: grafana/loki:${LOKI_TAG:-latest}
     command: -config.file=/etc/loki/local-config.yaml
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
     networks:
       - default
     ports:
@@ -51,11 +57,13 @@ services:
   tempo:
     image: *tempoImage
     command: [ "-config.file=/etc/tempo.yaml" ]
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
     networks:
       - default
     ports:
       - "4317:4317"
-      # - "3200:3200"
+      - "3200:3200"
     volumes:
       - ./config/tempo.yaml:/etc/tempo.yaml
       - tempo-data:/var/tempo
@@ -65,6 +73,8 @@ services:
 
   memcached:
     image: memcached:${MEMCACHED_TAG:-latest}
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
     networks:
       - default
     ports:
