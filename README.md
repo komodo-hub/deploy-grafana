@@ -1,6 +1,6 @@
 # Deploy Grafana
 
-Part of the [Komodo Hub collection.](https://github.com/komodo-hub/komodo-hub)
+Part of the [*Komodo Hub* collection.](https://github.com/komodo-hub/komodo-hub)
 
 Runs Grafana + Tempo + Loki. Grafana is preloaded with sources for Tempo, Prometheus (scraping Tempo), and Loki, and has auth disabled. All data is stored locally.
 
