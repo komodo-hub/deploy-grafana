@@ -19,10 +19,9 @@ name = "grafana"
 repo = "komodo-hub/deploy-grafana"
 ignore_services = ["tempo-init"]
 environment = """
-  ## Change the port to access Grafana UI
   GRAFANA_PORT = 3000
-  ## https://docs.docker.com/engine/logging/configure
   LOGGING_DRIVER = local
+  
   ## Custom image versions
   GRAFANA_TAG = latest
   TEMPO_TAG = latest
